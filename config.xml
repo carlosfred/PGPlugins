@@ -11,7 +11,7 @@
     <content src="index.html" />
 
     <description>
-       
+
     </description>
 
     <author href="http://w3ideias.com.br" email="contato@w3ideais.com.br">
@@ -27,5 +27,7 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
+
+   <gap:plugin name="org.apache.cordova.device" source="plugins.cordova.io" />
 
 </widget>

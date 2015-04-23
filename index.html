@@ -13,6 +13,8 @@
 
     document.addEventListener("deviceready", onDeviceReady, false);
 
+      window.addEventListener("batterystatus", onBatteryStatus, false)
+
     function onDeviceReady() {
       document.getElementById('cordova').innerHTML = device.cordova;
       document.getElementById('model').innerHTML = device.model;
@@ -33,7 +35,6 @@
        states[Connection.NONE]     = 'No network connection';
 
       document.getElementById('conexao').innerHTML = states[networkState];
-
 
     }
 

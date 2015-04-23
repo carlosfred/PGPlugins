@@ -32,11 +32,16 @@
        states[Connection.CELL]     = 'Cell generic connection';
        states[Connection.NONE]     = 'No network connection';
 
-
       document.getElementById('conexao').innerHTML = states[networkState];
 
 
     }
+
+   function onBatteryStatus(info) {
+       // Handle the online event
+      document.getElementById('btStatus').innerHTML = info.level;
+      document.getElementById('btPluged').innerHTML = info.isPlugged;
+   }
 
     </script>
 </head>
@@ -56,10 +61,11 @@
    <div id=p class="button button-block button-primary">platform <span id=platform></span></div>
    <div id=u class="button button-block button-caution">UUID <span id=uuid>uuid</span></div>
    <div id=v class="button button-block button-highlight">Version <span id=version>version</span></div>
-</div>
-
-<div id=deviceInformation>
+   <br /><br />
    <div id=c class="button button-block button-royal">Conexao <span id=conexao></span></div>
+   <br /><br />
+   <div id=c class="button button-block button-royal">Bateria Status<span id=btStatus></span></div>
+   <div id=c class="button button-block button-royal">Plugado <span id=btPluged></span></div>
 </div>
 
 

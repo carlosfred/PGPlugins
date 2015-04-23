@@ -28,6 +28,5 @@
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
 
-   <gap:plugin name="org.apache.cordova.device" source="plugins.cordova.io" />
-
+   <gap:plugin name="org.apache.cordova.device" />
 </widget>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "br.com.w3ideias.pgPlugins"
+        version   = "0.0.1">
+
+    <name>PG Plugins</name>
+
+    <content src="index.html" />
+
+    <description>
+       
+    </description>
+
+    <author href="http://w3ideias.com.br" email="contato@w3ideais.com.br">
+        w3Ideias
+    </author>
+
+    <!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+    <preference name="permissions"                value="none"/>
+
+    <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+
+</widget>

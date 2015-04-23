@@ -13,25 +13,7 @@
 
     document.addEventListener("deviceready", onDeviceReady, false);
 
-      window.addEventListener("batterystatus", onBatteryStatus, false)
-
     function onDeviceReady() {
-
-    if (navigator.notification) { // Override default HTML alert with native dialog
-          window.alert = function (message) {
-              navigator.notification.alert(
-                  message,    // message
-                  null,       // callback
-                  "Workshop", // title
-                  'OK'        // buttonName
-              );
-          };
-   }
-
-
-
-
-
 
       document.getElementById('cordova').innerHTML = device.cordova;
       document.getElementById('model').innerHTML = device.model;
@@ -53,13 +35,28 @@
 
       document.getElementById('conexao').innerHTML = states[networkState];
 
-    }
+      navigator.geolocation.getCurrentPosition(onSuccess, onError)
 
-   function onBatteryStatus(info) {
-       // Handle the online event
-      document.getElementById('btStatus').innerHTML = info.level;
-      document.getElementById('btPluged').innerHTML = info.isPlugged;
-   }
+      }
+
+      var onSuccess = function(position) {
+          alert('Latitude: '          + position.coords.latitude          + '\n' +
+                'Longitude: '         + position.coords.longitude         + '\n' +
+                'Altitude: '          + position.coords.altitude          + '\n' +
+                'Accuracy: '          + position.coords.accuracy          + '\n' +
+                'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                'Heading: '           + position.coords.heading           + '\n' +
+                'Speed: '             + position.coords.speed             + '\n' +
+                'Timestamp: '         + position.timestamp                + '\n');
+      };
+
+      // onError Callback receives a PositionError object
+      //
+      function onError(error) {
+          alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+      }
+
 
     </script>
 </head>
@@ -82,8 +79,8 @@
    <br /><br />
    <div id=c class="button button-block button-royal">Conexao <span id=conexao></span></div>
    <br /><br />
-   <div id=c class="button button-block button-royal">Bateria Status<span id=btStatus></span></div>
-   <div id=c class="button button-block button-royal">Plugado <span id=btPluged></span></div>
+   <div id=c class="button button-block button-royal">Latitude<span id=lat></span></div>
+   <div id=c class="button button-block button-royal">Longitude <span id=lng></span></div>
 </div>
 
 

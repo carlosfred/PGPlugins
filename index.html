@@ -35,12 +35,15 @@
 
       document.getElementById('conexao').innerHTML = states[networkState];
 
-      navigator.geolocation.getCurrentPosition(onSuccess, onError)
+      }
 
+      function local() {
+         alert(0)
+         navigator.geolocation.getCurrentPosition(onSuccess, onError)
       }
 
       function onSuccess(position) {
-         document.getElementById('lat').innerHTML = "x - " + position.coords.latitude
+         document.getElementById('lat').innerHTML = "x- " + position.coords.latitude
          document.getElementById('lng').innerHTML = "y - " + position.coords.longitude
       };
 
@@ -62,6 +65,13 @@
 <span onclick='navigator.app.exitApp()'>
 <button class="button button-pill button-primary button-large" style="margin:1em;float:right;">Exit</button>
 </span>
+
+<span onclick='local()'>
+<button class="button button-pill button-primary button-large" style="margin:1em;float:right;">Localizacao</button>
+</span>
+
+
+
 <p style=clear:both; />
 
 <div id=deviceInformation>

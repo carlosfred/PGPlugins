@@ -16,6 +16,23 @@
       window.addEventListener("batterystatus", onBatteryStatus, false)
 
     function onDeviceReady() {
+
+    if (navigator.notification) { // Override default HTML alert with native dialog
+          window.alert = function (message) {
+              navigator.notification.alert(
+                  message,    // message
+                  null,       // callback
+                  "Workshop", // title
+                  'OK'        // buttonName
+              );
+          };
+   }
+
+
+
+
+
+
       document.getElementById('cordova').innerHTML = device.cordova;
       document.getElementById('model').innerHTML = device.model;
       document.getElementById('platform').innerHTML = device.platform;
